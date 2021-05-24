@@ -1,0 +1,12 @@
+*/bin/
+*.class
+/bin/
+*/.settings/
+.project
+.settings/
+*/.classpath
+.DS_Store
+*/.factorypath
+*/.checkstyle
+*.iml
+.idea/*
