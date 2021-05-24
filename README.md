@@ -1,4 +1,4 @@
-# Stock Exchange with 100% Coverage Junit Jupiter Test Cases
+# Stock Exchange Spring Boot with 100% Service Coverage Junit Jupiter Test Cases
 
 StockExchange is a service for Navi.
 
