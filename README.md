@@ -1,4 +1,4 @@
-# Stock Exchange
+# Stock Exchange with 100% Coverage Junit Jupiter Test Cases
 
 StockExchange is a service for Navi.
 
