@@ -5,6 +5,9 @@ StockExchange is a service for Navi.
 Question:
 https://docs.google.com/document/d/1Z1GO78QLVCNhY_Fw51xmQKHxIIiAbHWQsmGZKgQrl0M/edit
 
+## Assumptions taken
+
+The List of Buy and Sell Orders will have Ascending Time Path (No Duplicate Time)
 
 ## Run Application
 
