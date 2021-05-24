@@ -17,6 +17,13 @@ Go to ./target RUN
 java -jar stock-0.0.1-SNAPSHOT.jar ../file/test.txt
 ```
 
+Output Image:
+
+
+<img width="541" alt="Screenshot 2021-05-25 at 3 55 59 AM" src="https://user-images.githubusercontent.com/36882197/119414451-37017900-bd0d-11eb-9c12-ad79037d48e2.png">
+
+
+
 ## For Custom File
 
 Go to ./target RUN
