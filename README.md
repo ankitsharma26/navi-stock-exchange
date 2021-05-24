@@ -25,7 +25,7 @@ Go to ./target RUN
 java -jar stock-0.0.1-SNAPSHOT.jar <file-path>
 ```
 
-## MVN Build
+## MVN Build with Test Cases
 
 GO TO ROOT REPOSITORY FOLDER RUN
 
