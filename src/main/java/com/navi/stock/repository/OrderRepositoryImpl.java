@@ -26,7 +26,7 @@ public class OrderRepositoryImpl implements OrderRepository {
       return corporationBuySellOrderMapSorted.get(corporationName).get(orderType);
     }
 
-    return null;
+    return new PriorityQueue<>();
   }
 
   /**

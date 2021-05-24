@@ -14,8 +14,6 @@ public class Transaction {
 
   private Order sellerOrder;
 
-  private LocalTime completedAt;
-
   private Long quantity;
 
 }
