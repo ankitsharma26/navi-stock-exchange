@@ -4,6 +4,9 @@ import java.time.LocalTime;
 
 import lombok.Data;
 
+/**
+ * Transaction Entity which stores All the Transactions
+ */
 @Data
 public class Transaction {
 

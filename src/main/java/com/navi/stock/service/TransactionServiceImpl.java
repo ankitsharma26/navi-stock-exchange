@@ -17,6 +17,13 @@ public class TransactionServiceImpl implements TransactionService {
 
   private final OrderService orderService;
 
+  /**
+   * Algorithm to Apply Transaction for a corporation Name
+   *
+   * @param corporationName - Corporation Name stock belongs to
+   *
+   * @return - List of Transaction at present Corporation State
+   */
   @Override
   public List<Transaction> applyTransaction(String corporationName) {
     List<Transaction> transactions = new ArrayList<>();
@@ -24,6 +31,9 @@ public class TransactionServiceImpl implements TransactionService {
     PriorityQueue<Order> buyPriorityQueue = orderService.getPriorityOrderByCorporationAndType(corporationName, OrderType.BUY);
     PriorityQueue<Order> sellPriorityQueue = orderService.getPriorityOrderByCorporationAndType(corporationName, OrderType.SELL);
 
+    /*
+     * We try to find All the Transaction which can happen till present state of Buy and Sell
+     */
     while (!sellPriorityQueue.isEmpty()
         && !buyPriorityQueue.isEmpty()
         && sellPriorityQueue.peek().getRequestedPrice() < buyPriorityQueue.peek().getRequestedPrice()) {
@@ -34,6 +44,9 @@ public class TransactionServiceImpl implements TransactionService {
       transaction.setBuyerOrder(buyOrder);
       transaction.setSellerOrder(sellOrder);
 
+      /*
+       * Based On State we may have Partial BUY/ Partial SELL / Full BUY/SELL
+       */
       if (sellOrder.getQuantityRequested() > buyOrder.getQuantityRequested()) {
         transaction.setQuantity(buyOrder.getQuantityRequested());
         sellOrder.setQuantityRequested(sellOrder.getQuantityRequested() - buyOrder.getQuantityRequested());

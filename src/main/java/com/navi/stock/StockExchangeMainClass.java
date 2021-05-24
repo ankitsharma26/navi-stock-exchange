@@ -37,6 +37,11 @@ public class StockExchangeMainClass implements CommandLineRunner {
       String orderLine = sc.nextLine();
 
       Order order;
+
+      /*
+       * Order will be created For each Line
+       * In case of Any Invalid Input BadAttributeException is thrown
+       */
       try {
         order = orderService.addOrder(orderLine);
       } catch (BadAttributeException badAttributeException) {
@@ -45,8 +50,14 @@ public class StockExchangeMainClass implements CommandLineRunner {
         return;
       }
 
+      /*
+       * For Every New Buy And Sell Order, A new Transaction is Tried Out for only orders which are of given Corporation Name
+       */
       List<Transaction> transactions = transactionService.applyTransaction(order.getCorporationName());
 
+      /*
+       * If Any transaction Happens, it is printed onto the Console
+       */
       for (Transaction transaction : transactions) {
         System.out.println(
             "#" + transaction.getBuyerOrder().getId()

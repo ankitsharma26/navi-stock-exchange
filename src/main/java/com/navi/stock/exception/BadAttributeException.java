@@ -1,5 +1,8 @@
 package com.navi.stock.exception;
 
+/**
+ * Bad Attribute Exception is thrown if the Input given is in wrong format
+ */
 public class BadAttributeException extends RuntimeException {
 
   /**

@@ -11,6 +11,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderRepositoryImpl implements OrderRepository {
 
+  /**
+   * This is to Fetch Priority Queue for SELL/BUY for any corporation.
+   *
+   * @param corporationName - Corporation Name which Stock belongs to
+   * @param orderType - SELL/BUY
+   *
+   * @return - PriorityQueue<Order>
+   */
   @Override
   public PriorityQueue<Order> findByCorporationAndOrderType(String corporationName, OrderType orderType) {
     if (corporationBuySellOrderMapSorted.containsKey(corporationName)) {
@@ -21,6 +29,13 @@ public class OrderRepositoryImpl implements OrderRepository {
     return null;
   }
 
+  /**
+   * Call to save new Order
+   *
+   * @param order - Order to be saved
+   *
+   * @return - Order saved
+   */
   @Override
   public Order save(Order order) {
     order.validate();
@@ -37,6 +52,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     return order;
   }
 
+  /**
+   * Call to delete the order
+   *
+   * @param order - Order deleted
+   */
   @Override
   public void delete(Order order) {
     orders.remove(order);
